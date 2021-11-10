@@ -2,6 +2,11 @@ const express = require("express")
 const app = express()
 const models = require("../models/index")
 const paket = models.paket
+//pangiil fungsi auth
+const {auth}= require("./login")
+
+//fungsi auth dijadikan middleware
+app.use(auth)
 app.use(express.json())
 app.get("/",async(request, response) => {
     let dataPaket = await paket.findAll()

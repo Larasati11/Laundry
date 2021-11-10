@@ -5,6 +5,11 @@ app.use(express.json())
 const models = require("../models/index")
 const users = models.users
 
+//pangiil fungsi auth
+const {auth}= require("./login")
+
+//fungsi auth dijadikan middleware
+app.use(auth)
 //endpoint for get all member
 app.get("/", async (request, response) => { 
     let dataUsers = await users.findAll()
