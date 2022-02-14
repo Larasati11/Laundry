@@ -6,7 +6,7 @@ const paket = models.paket
 const {auth}= require("./login")
 
 //fungsi auth dijadikan middleware
-app.use(auth)
+/*app.use(auth)*/
 app.use(express.json())
 app.get("/",async(request, response) => {
     let dataPaket = await paket.findAll()

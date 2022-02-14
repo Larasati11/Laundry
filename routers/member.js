@@ -14,7 +14,7 @@ const member = models.member
 const {auth}= require("./login")
 
 //fungsi auth dijadikan middleware
-app.use(auth)
+/* app.use(auth) */
 
 //endpoint for get all member
 app.get("/", async (request, response) => { 
@@ -70,7 +70,7 @@ app.delete("/:id_member", (request,response) => {
     let parameter ={
         id_member: request.params.id_member
     }
-    member.destroy(data, {where: parameter})
+    member.destroy({where: parameter})
     .then(result => {
         return response.json({
             message: `Data berhasil dihapus`

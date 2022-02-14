@@ -9,9 +9,9 @@ const detail_transaksi = models.detail_transaksi
 
 //pangiil fungsi auth
 const {auth}= require("./login")
-
 //fungsi auth dijadikan middleware
-app.use(auth)
+//app.use(auth)
+
 //endpoint get transaksi
 app.get("/", async (request,response) => {
     let dataTransaksi = await transaksi.findAll({
